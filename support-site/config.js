@@ -1,0 +1,18 @@
+window.supportSiteConfig = {
+  appName: '机账通',
+  pageTitle: '机账通｜技术支持',
+  subtitle: '面向工程机械经营场景的记录与管理工具',
+  description:
+    '机账通技术支持页面，提供产品简介、联系方式、反馈说明、响应说明及相关链接。',
+  supportEmail: '582748196@qq.com',
+  supportEmailSubject: '机账通｜支持与反馈',
+  supportSiteUrl: './',
+  privacyPolicyUrl: './privacy.html',
+  termsOfServiceUrl: './terms.html',
+  douyinDisplayName: '开挖机的coder',
+  douyinHandle: '@开挖机的coder',
+  douyinId: '45510955119',
+  douyinUrl: 'https://v.douyin.com/si9a8NKGL8U/',
+  wechatLabel: 'YuyuanAx',
+  wechatNote: '建议复制微信号后，在微信内搜索添加。',
+};

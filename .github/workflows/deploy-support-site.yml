@@ -1,0 +1,60 @@
+name: Deploy Support Site
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'support-site/**'
+      - '.github/workflows/deploy-support-site.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: support-site-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate policy publication readiness
+        run: |
+          test "$(grep -c '政策版本：privacy-v2' support-site/privacy.html)" -eq 1
+          if grep -q '拟定生效日期' support-site/privacy.html; then
+            echo 'error: privacy policy still contains a draft effective date' >&2
+            exit 1
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload support site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: support-site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Verify published support routes
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          base_url="${PAGE_URL%/}"
+          for path in '' privacy.html terms.html; do
+            curl --fail --silent --show-error --location \
+              --retry 5 --retry-delay 3 "$base_url/$path" >/dev/null
+          done
