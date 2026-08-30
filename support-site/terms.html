@@ -24,7 +24,8 @@
       <article class="document">
         <div class="meta">
           <div>生效日期：2026-03-17</div>
-          <div>联系邮箱：<a id="support-email-link" href="mailto:582748196@qq.com">582748196@qq.com</a></div>
+          <div>个人开发者邮箱：<a id="support-email-link" href="mailto:582748196@qq.com">582748196@qq.com</a></div>
+          <div>公司企业邮箱：<a id="company-email-link" href="mailto:developer@yuyuan.net.cn">developer@yuyuan.net.cn</a></div>
         </div>
 
         <section class="section">
@@ -79,7 +80,7 @@
         <section class="section">
           <h2>8. 条款更新与联系</h2>
           <p>
-            我们可能根据产品迭代、平台政策或法律法规变化对本条款进行更新。更新版本发布后，如你继续使用本应用，视为接受更新后的条款。如你对本条款有疑问，可通过 <a id="support-email-inline" href="mailto:582748196@qq.com">582748196@qq.com</a> 与我们联系。
+            我们可能根据产品迭代、平台政策或法律法规变化对本条款进行更新。更新版本发布后，如你继续使用本应用，视为接受更新后的条款。如你对本条款有疑问，可通过个人开发者邮箱 <a id="support-email-inline" href="mailto:582748196@qq.com">582748196@qq.com</a> 或公司企业邮箱 <a id="company-email-inline" href="mailto:developer@yuyuan.net.cn">developer@yuyuan.net.cn</a> 与我们联系。
           </p>
         </section>
 
@@ -95,6 +96,7 @@
       (function applyLegalConfig() {
         const config = window.supportSiteConfig || {};
         const supportEmail = config.supportEmail || '582748196@qq.com';
+        const companyEmail = config.companyEmail || 'developer@yuyuan.net.cn';
         const supportSiteUrl = config.supportSiteUrl || './';
         const privacyPolicyUrl = config.privacyPolicyUrl || './privacy.html';
         const emailHref = 'mailto:' + supportEmail;
@@ -103,6 +105,10 @@
         document.getElementById('support-email-link').href = emailHref;
         document.getElementById('support-email-inline').textContent = supportEmail;
         document.getElementById('support-email-inline').href = emailHref;
+        document.getElementById('company-email-link').textContent = companyEmail;
+        document.getElementById('company-email-link').href = 'mailto:' + companyEmail;
+        document.getElementById('company-email-inline').textContent = companyEmail;
+        document.getElementById('company-email-inline').href = 'mailto:' + companyEmail;
         document.getElementById('support-home-link').href = supportSiteUrl;
         document.getElementById('privacy-link').href = privacyPolicyUrl;
       })();

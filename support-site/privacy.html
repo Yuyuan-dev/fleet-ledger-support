@@ -23,13 +23,14 @@
 
       <article class="document">
         <div class="meta">
-          <div>政策版本：privacy-v3</div>
-          <div>生效日期：2026 年 8 月 28 日</div>
+          <div>政策版本：privacy-v4</div>
+          <div>生效日期：2026 年 8 月 30 日</div>
           <div>开发者：眉山市源链网络科技有限责任公司</div>
           <div>
             APP备案号：<a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">蜀ICP备2026013936号-1A</a>
           </div>
-          <div>联系邮箱：<a id="support-email-link" href="mailto:582748196@qq.com">582748196@qq.com</a></div>
+          <div>个人开发者邮箱：<a id="support-email-link" href="mailto:582748196@qq.com">582748196@qq.com</a></div>
+          <div>公司企业邮箱：<a id="company-email-link" href="mailto:developer@yuyuan.net.cn">developer@yuyuan.net.cn</a></div>
         </div>
 
         <section class="section">
@@ -38,7 +39,8 @@
           <p>应用包名：com.yuyuan.fleetledger</p>
           <p>开发者：眉山市源链网络科技有限责任公司</p>
           <p>APP备案号：<a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">蜀ICP备2026013936号-1A</a></p>
-          <p>联系邮箱：<a href="mailto:582748196@qq.com">582748196@qq.com</a></p>
+          <p>个人开发者邮箱：<a href="mailto:582748196@qq.com">582748196@qq.com</a></p>
+          <p>公司企业邮箱：<a href="mailto:developer@yuyuan.net.cn">developer@yuyuan.net.cn</a></p>
           <p>
             机账通是一款面向工程机械经营场景的记录与管理工具，帮助用户管理设备工时、油电消耗、项目收支、维保明细及设备信息。
           </p>
@@ -153,7 +155,7 @@
             如果你没有主动上传云端备份，开发者通常无法为你恢复仅保存在本地设备中的账本数据。
           </p>
           <p>
-            你主动上传的云端备份及其关联的稳定内部账号标识会保留至你提出删除请求或账户关闭。登录后，你可以通过“设备 → 账户中心 → 账户与隐私 → 注销账户”完成身份验证并提交注销申请；也可以通过本政策列明的联系邮箱提出删除请求。开发者将在完成身份核验后的 30 个自然日内完成账户注销及约定范围内的关联数据处理。
+            你主动上传的云端备份及其关联的稳定内部账号标识会保留至你提出删除请求或账户关闭。登录后，你可以通过“设备 → 账户中心 → 账户与隐私 → 注销账户”完成身份验证并提交注销申请；也可以通过本政策列明的任一联系邮箱提出删除请求。开发者将在完成身份核验后的 30 个自然日内完成账户注销及约定范围内的关联数据处理。
           </p>
         </section>
 
@@ -187,7 +189,7 @@
             我们可能会根据产品功能迭代、法律法规要求或服务变化，对本政策进行更新。更新后的版本会通过应用内相关页面、支持页面或其他合理方式进行发布。
           </p>
           <p>
-            每个版本使用独立的政策版本标识。旧版确认不会自动视为接受 privacy-v3；涉及手机号登录、云端备份、同步、订阅服务端校验或其他网络数据处理前，需要接受当前版本。本 privacy-v3 政策自 2026 年 8 月 28 日起生效。
+            每个版本使用独立的政策版本标识。旧版确认不会自动视为接受 privacy-v4；涉及手机号登录、云端备份、同步、订阅服务端校验或其他网络数据处理前，需要接受当前版本。本 privacy-v4 政策自 2026 年 8 月 30 日起生效。
           </p>
         </section>
 
@@ -198,7 +200,8 @@
           </p>
           <p>
             开发者：眉山市源链网络科技有限责任公司<br />
-            电子邮箱：<a id="support-email-inline" href="mailto:582748196@qq.com">582748196@qq.com</a>
+            个人开发者邮箱：<a id="support-email-inline" href="mailto:582748196@qq.com">582748196@qq.com</a><br />
+            公司企业邮箱：<a id="company-email-inline" href="mailto:developer@yuyuan.net.cn">developer@yuyuan.net.cn</a>
           </p>
         </section>
 
@@ -214,6 +217,7 @@
       (function applyLegalConfig() {
         const config = window.supportSiteConfig || {};
         const supportEmail = config.supportEmail || '582748196@qq.com';
+        const companyEmail = config.companyEmail || 'developer@yuyuan.net.cn';
         const supportSiteUrl = config.supportSiteUrl || './';
         const termsOfServiceUrl = config.termsOfServiceUrl || './terms.html';
         const emailHref = 'mailto:' + supportEmail;
@@ -222,6 +226,10 @@
         document.getElementById('support-email-link').href = emailHref;
         document.getElementById('support-email-inline').textContent = supportEmail;
         document.getElementById('support-email-inline').href = emailHref;
+        document.getElementById('company-email-link').textContent = companyEmail;
+        document.getElementById('company-email-link').href = 'mailto:' + companyEmail;
+        document.getElementById('company-email-inline').textContent = companyEmail;
+        document.getElementById('company-email-inline').href = 'mailto:' + companyEmail;
         document.getElementById('support-home-link').href = supportSiteUrl;
         document.getElementById('terms-link').href = termsOfServiceUrl;
       })();

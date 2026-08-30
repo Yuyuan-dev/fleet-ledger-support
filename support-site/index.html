@@ -243,10 +243,19 @@
           <div class="channel-list">
             <div class="channel-item">
               <div>
-                <strong>开发者邮箱</strong>
+                <strong>个人开发者邮箱</strong>
                 <span id="support-email-text">582748196@qq.com</span>
               </div>
               <a class="link-button" id="support-email-link" href="mailto:582748196@qq.com">
+                发送邮件
+              </a>
+            </div>
+            <div class="channel-item">
+              <div>
+                <strong>公司企业邮箱</strong>
+                <span id="company-email-text">developer@yuyuan.net.cn</span>
+              </div>
+              <a class="link-button" id="company-email-link" href="mailto:developer@yuyuan.net.cn">
                 发送邮件
               </a>
             </div>
@@ -342,7 +351,8 @@
 
       <p class="footer">
         本页面用于提供“机账通”产品支持与反馈渠道，也可作为 App Store Connect 的技术支持网址（Support URL）填写页面。<br />
-        APP备案号：<a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">蜀ICP备2026013936号-1A</a>
+        APP备案号：<a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">蜀ICP备2026013936号-1A</a><br />
+        公司企业邮箱：<a href="mailto:developer@yuyuan.net.cn">developer@yuyuan.net.cn</a>
       </p>
     </main>
 
@@ -356,6 +366,7 @@
           config.description ||
           '机账通技术支持页面，提供产品简介、联系方式、反馈说明、响应说明及相关链接。';
         const supportEmail = config.supportEmail || '582748196@qq.com';
+        const companyEmail = config.companyEmail || 'developer@yuyuan.net.cn';
         const supportEmailSubject = config.supportEmailSubject || '机账通｜支持与反馈';
         const privacyPolicyUrl =
           config.privacyPolicyUrl || './privacy.html';
@@ -408,6 +419,8 @@
           'mailto:' + supportEmail + '?subject=' + encodeURIComponent(supportEmailSubject);
         document.getElementById('support-email-text').textContent = supportEmail;
         emailLink.href = emailHref;
+        document.getElementById('company-email-text').textContent = companyEmail;
+        document.getElementById('company-email-link').href = 'mailto:' + companyEmail;
 
         const privacyLink = document.getElementById('privacy-link');
         privacyLink.href = privacyPolicyUrl;

@@ -5,6 +5,7 @@ window.supportSiteConfig = {
   description:
     '机账通技术支持页面，提供产品简介、联系方式、反馈说明、响应说明及相关链接。',
   supportEmail: '582748196@qq.com',
+  companyEmail: 'developer@yuyuan.net.cn',
   supportEmailSubject: '机账通｜支持与反馈',
   supportSiteUrl: './',
   privacyPolicyUrl: './privacy.html',
