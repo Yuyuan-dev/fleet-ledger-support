@@ -31,7 +31,10 @@ jobs:
 
       - name: Validate policy publication readiness
         run: |
-          test "$(grep -c '政策版本：privacy-v4' support-site/privacy.html)" -eq 1
+          test "$(grep -c '政策版本：privacy-v9' support-site/privacy.html)" -eq 1
+          test "$(grep -c '生效日期：2026-10-11' support-site/privacy.html)" -eq 1
+          test "$(grep -c 'Policy version: privacy-v9' support-site/privacy-en.html)" -eq 1
+          test "$(grep -c 'Effective date: 2026-10-11' support-site/privacy-en.html)" -eq 1
           test "$(grep -c '蜀ICP备2026013936号-1A' support-site/privacy.html)" -eq 2
           test "$(grep -c '582748196@qq.com' support-site/privacy.html)" -ge 2
           test "$(grep -c 'developer@yuyuan.net.cn' support-site/privacy.html)" -ge 2
@@ -58,7 +61,7 @@ jobs:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
         run: |
           base_url="${PAGE_URL%/}"
-          for path in '' privacy.html terms.html; do
+          for path in '' privacy.html privacy-en.html terms.html; do
             curl --fail --silent --show-error --location \
               --retry 5 --retry-delay 3 "$base_url/$path" >/dev/null
           done

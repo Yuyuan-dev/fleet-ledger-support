@@ -38,15 +38,16 @@ python3 -m http.server 8080
 4. 默认公开地址为：
 
 ```text
-https://yuyuan-dev.github.io/fleet-ledger-support/
+https://yuyuan-dev.github.io/fleet_ledger_app/
 ```
 
 5. 部署成功后，以下地址即可直接使用：
 
 ```text
-支持页：https://yuyuan-dev.github.io/fleet-ledger-support/
-隐私政策：https://yuyuan-dev.github.io/fleet-ledger-support/privacy.html
-使用条款：https://yuyuan-dev.github.io/fleet-ledger-support/terms.html
+支持页：https://yuyuan-dev.github.io/fleet_ledger_app/
+中文隐私政策：https://yuyuan-dev.github.io/fleet_ledger_app/privacy.html
+英文隐私政策：https://yuyuan-dev.github.io/fleet_ledger_app/privacy-en.html
+使用条款：https://yuyuan-dev.github.io/fleet_ledger_app/terms.html
 ```
 
 6. 其中“支持页”地址可填入 App Store Connect 的 `Support URL`
