@@ -31,16 +31,20 @@ jobs:
 
       - name: Validate policy publication readiness
         run: |
-          test "$(grep -c '政策版本：privacy-v9' support-site/privacy.html)" -eq 1
-          test "$(grep -c '生效日期：2026-10-11' support-site/privacy.html)" -eq 1
-          test "$(grep -c 'Policy version: privacy-v9' support-site/privacy-en.html)" -eq 1
-          test "$(grep -c 'Effective date: 2026-10-11' support-site/privacy-en.html)" -eq 1
+          test "$(grep -c '政策版本：privacy-v11' support-site/privacy.html)" -eq 1
+          test "$(grep -c '生效日期：2026-10-16' support-site/privacy.html)" -eq 1
+          test "$(grep -c 'Policy version: privacy-v11' support-site/privacy-en.html)" -eq 1
+          test "$(grep -c 'Effective date: 2026-10-16' support-site/privacy-en.html)" -eq 1
           test "$(grep -c '蜀ICP备2026013936号-1A' support-site/privacy.html)" -eq 2
           test "$(grep -c '582748196@qq.com' support-site/privacy.html)" -ge 2
           test "$(grep -c 'developer@yuyuan.net.cn' support-site/privacy.html)" -ge 2
           grep -q 'href="https://beian.miit.gov.cn/"' support-site/privacy.html
           if grep -q '拟定生效日期' support-site/privacy.html; then
             echo 'error: privacy policy still contains a draft effective date' >&2
+            exit 1
+          fi
+          if grep -q '审核草稿' support-site/privacy.html || grep -q 'Review draft' support-site/privacy-en.html; then
+            echo 'error: privacy policy still contains draft banner' >&2
             exit 1
           fi
 
